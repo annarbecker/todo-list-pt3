@@ -27,4 +27,15 @@ public class Category {
   public static ArrayList<Category> all() {
     return instances;
   }
+  public static void clear() {
+    instances.clear();
+  }
+
+  public static Category find(int id) {
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
 }
