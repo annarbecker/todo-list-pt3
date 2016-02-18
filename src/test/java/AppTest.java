@@ -32,33 +32,42 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void taskIsCreatedTest() {
-      goTo("http://localhost:4567/");
-      click("a", withText("Add a new task"));
-      fill("#description").with("Mow the lawn");
-      submit(".btn");
-      assertThat(pageSource()).contains("Your task has been saved.");
-  }
-
-  @Test
-  public void taskIsDisplayedTest() {
-      goTo("http://localhost:4567/tasks/new");
-      fill("#description").with("Mow the lawn");
-      submit(".btn");
-      click("a", withText("View All Tasks"));
-      assertThat(pageSource()).contains("Mow the lawn");
-  }
-
-  @Test
-  public void multipleTasksAreDisplayedTest() {
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Mow the lawn");
+  public void categoryIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Category"));
+    fill("#name").with("Household chores");
     submit(".btn");
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Buy groceries");
-    submit(".btn");
-    click("a", withText("View All Tasks"));
-    assertThat(pageSource()).contains("Mow the lawn");
-    assertThat(pageSource()).contains("Buy groceries");
+    assertThat(pageSource()).contains("Your category has been saved.");
   }
 }
+//   @Test
+//   public void taskIsCreatedTest() {
+//       goTo("http://localhost:4567/");
+//       click("a", withText("Add a new task"));
+//       fill("#description").with("Mow the lawn");
+//       submit(".btn");
+//       assertThat(pageSource()).contains("Your task has been saved.");
+//   }
+//
+//   @Test
+//   public void taskIsDisplayedTest() {
+//       goTo("http://localhost:4567/tasks/new");
+//       fill("#description").with("Mow the lawn");
+//       submit(".btn");
+//       click("a", withText("View All Tasks"));
+//       assertThat(pageSource()).contains("Mow the lawn");
+//   }
+//
+//   @Test
+//   public void multipleTasksAreDisplayedTest() {
+//     goTo("http://localhost:4567/tasks/new");
+//     fill("#description").with("Mow the lawn");
+//     submit(".btn");
+//     goTo("http://localhost:4567/tasks/new");
+//     fill("#description").with("Buy groceries");
+//     submit(".btn");
+//     click("a", withText("View All Tasks"));
+//     assertThat(pageSource()).contains("Mow the lawn");
+//     assertThat(pageSource()).contains("Buy groceries");
+//   }
+// }

@@ -38,4 +38,8 @@ public class Category {
       return null;
     }
   }
+
+  public void addTask (Task task) {
+    mTasks.add(task);
+  }
 }
